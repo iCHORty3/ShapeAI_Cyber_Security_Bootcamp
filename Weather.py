@@ -2,7 +2,7 @@ import requests
 #import os
 from datetime import datetime
 
-api_key = '87d845b0b6cf29baa1a73cc34b067a95'
+api_key = '6128130b089001baa02fcebcae6a4f81'
 location = input("Enter the city name: ")
 
 complete_api_link = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+api_key
@@ -24,3 +24,6 @@ print ("Current temperature is: {:.2f} deg C".format(temp_city))
 print ("Current weather desc  :",weather_desc)
 print ("Current Humidity      :",hmdt, '%')
 print ("Current wind speed    :",wind_spd ,'kmph')
+
+with open ('Weather.txt','wb') as f:
+  f.write(api_link.content)
